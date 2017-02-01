@@ -15,6 +15,9 @@ public class Main {
         int squaredNumber = 0;
         int cubedNumber = 0;
         String keepGoing = " ";
+        int start = 1;
+        int squaredStart = 0;
+        int cubedStart = 0;
 
 
         do {
@@ -27,8 +30,11 @@ public class Main {
         //outprint using formatter to make table (http://www.homeandlearn.co.uk/java/java_formatted_strings.html)
         System.out.printf("%-15s %s %15s %n", numberHeader, squaredHeader, cubedHeader);
         System.out.println("______________________________________________");
-        System.out.printf("%-15s %s %20s %n", userNumber, squaredNumber, cubedNumber);
-
+        for(start=1; start <= userNumber; start++){
+            squaredStart = (int) Math.pow(start, 2);
+            cubedStart = (int) Math.pow(start, 3);
+                System.out.printf("%-15s %s %20s %n", start, squaredStart, cubedStart);
+            }
         System.out.println("would you like to continue? Enter yes or no.");
             keepGoing = scan.nextLine();
 
